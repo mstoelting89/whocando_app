@@ -1,22 +1,23 @@
-import 'package:app/presentation/LoginPage.dart';
+import 'package:app/Theme.dart';
+import 'package:app/presentation/router/routes.gr.dart' as r;
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  final _appRouter = r.AppRouter();
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       title: 'WhoCanDo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: LoginPage(),
+      theme: AppTheme.lightTheme,
+      themeMode: ThemeMode.light,
+      routerDelegate: _appRouter.delegate(),
+      routeInformationParser: _appRouter.defaultRouteParser(),
     );
   }
 }
