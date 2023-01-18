@@ -1,3 +1,6 @@
+import 'package:app/presentation/CustomWidgets/CustomButton.dart';
+import 'package:app/presentation/router/routes.gr.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 class LoginBody extends StatelessWidget {
@@ -35,7 +38,7 @@ class LoginBody extends StatelessWidget {
         TextFormField(
           cursorColor: Colors.white,
           decoration: const InputDecoration(
-              labelText: 'E-Mail',
+              labelText: 'Passwort',
               focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.white)),
               enabledBorder: OutlineInputBorder(
@@ -45,24 +48,7 @@ class LoginBody extends StatelessWidget {
         const SizedBox(
           height: 20,
         ),
-        InkResponse(
-          onTap: () => {},
-          child: Container(
-            height: 60,
-            width: double.infinity,
-            decoration: BoxDecoration(
-                color: theme.colorScheme.primary,
-                borderRadius: BorderRadius.circular(10)),
-            child: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Text(
-                'Login',
-                style: theme.textTheme.bodyText1,
-                textAlign: TextAlign.left,
-              ),
-            ),
-          ),
-        ),
+        CustomButton(buttonText: 'Login', callback: () => context.router.replace(const MainFrameRoute())),
         const SizedBox(
           height: 70,
         ),
