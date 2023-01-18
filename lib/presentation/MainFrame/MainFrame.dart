@@ -1,10 +1,12 @@
 import 'package:app/presentation/SearchPage/SearchBody.dart';
+import 'package:app/presentation/SwipePage/SwipePage.dart';
 import 'package:flutter/material.dart';
 
 import '../CustomWidgets/NavigationIcon.dart';
 
 class MainFrame extends StatefulWidget {
-  const MainFrame({Key? key}) : super(key: key);
+  int pageIndex;
+  MainFrame({Key? key, required this.pageIndex}) : super(key: key);
 
   @override
   State<MainFrame> createState() => _MainFrameState();
@@ -12,10 +14,9 @@ class MainFrame extends StatefulWidget {
 
 class _MainFrameState extends State<MainFrame> {
   final pages = [
-    const SearchBody()
+    const SearchBody(),
+    const SwipePage()
   ];
-
-  int pageIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,7 @@ class _MainFrameState extends State<MainFrame> {
             colors: [theme.colorScheme.onPrimary, Colors.white]),
       ),
       child: Scaffold(
-          body: pages[pageIndex],
+          body: pages[widget.pageIndex],
           bottomNavigationBar: Container(
             height: 65,
             decoration: BoxDecoration(color: theme.colorScheme.primary),
@@ -41,7 +42,7 @@ class _MainFrameState extends State<MainFrame> {
                   child: NavigationIcon(
                     callback: () {
                       setState(() {
-                        pageIndex = 0;
+                        widget.pageIndex = 0;
                       });
                     },
                     icon: Icons.home_outlined,

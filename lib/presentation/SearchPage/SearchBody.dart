@@ -1,3 +1,4 @@
+import 'package:app/presentation/router/routes.gr.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
@@ -41,7 +42,7 @@ class SearchBody extends StatelessWidget {
         const SizedBox(
           height: 20,
         ),
-        CustomButton(buttonText: 'Zu den Ergebnissen', callback: () => {}),
+        CustomButton(buttonText: 'Zu den Ergebnissen', callback: () => context.router.push(MainFrameRoute(pageIndex: 1))),
       ],
     );
   }

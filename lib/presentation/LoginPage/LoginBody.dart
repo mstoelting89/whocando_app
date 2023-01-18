@@ -48,7 +48,7 @@ class LoginBody extends StatelessWidget {
         const SizedBox(
           height: 20,
         ),
-        CustomButton(buttonText: 'Login', callback: () => context.router.replace(const MainFrameRoute())),
+        CustomButton(buttonText: 'Login', callback: () => context.router.replace(MainFrameRoute(pageIndex: 0))),
         const SizedBox(
           height: 70,
         ),

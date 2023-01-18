@@ -13,11 +13,8 @@ class NavigationIcon extends StatelessWidget {
         callback();
       },
       child: Container(
-        decoration: BoxDecoration(
-          border: Border.all(
-            color: Colors.white,
-            width: 1,
-          )
+        decoration: const BoxDecoration(
+          border: Border.symmetric(vertical: BorderSide(width: 1, color: Colors.white),)
         ),
         child: Column(
           children: [
