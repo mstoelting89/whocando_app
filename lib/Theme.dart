@@ -6,7 +6,7 @@ class AppTheme {
   static const Color _lightScaffoldBackgroundColor = Color(0xFF53A2BE);
   static const Color _lightPrimaryColor = Color(0xFF0A2239);
   //static const Color _lightScaffoldBackgroundColorGradient = Colors.white;
-  static const Color _appbarColorLight = Colors.transparent;
+  static const Color _appbarColorLight = Color(0xFF53A2BE);
 
   static const Color _lightTextColorPrimary = Colors.white;
 

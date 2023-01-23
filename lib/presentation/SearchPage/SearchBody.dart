@@ -14,7 +14,7 @@ class SearchBody extends StatelessWidget {
       padding: const EdgeInsets.all(20),
       children: [
         const SizedBox(
-          height: 200,
+          height: 100,
         ),
         TextFormField(
           cursorColor: Colors.white,
@@ -42,7 +42,7 @@ class SearchBody extends StatelessWidget {
         const SizedBox(
           height: 20,
         ),
-        CustomButton(buttonText: 'Zu den Ergebnissen', callback: () => context.router.push(MainFrameRoute(pageIndex: 1))),
+        CustomButton(buttonText: 'Zu den Ergebnissen', callback: () => context.router.replace(MainFrameRoute(pageIndex: 1))),
       ],
     );
   }
